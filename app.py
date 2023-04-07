@@ -42,8 +42,11 @@ if __name__=='__main__':
     hist3['date']=hist3.index
 
     hist = hist1[['close','date']]
-    hist['close2'] = hist2[['close']]
-    hist['close3'] = hist3[['close']]
+    hist[coin_choice1]=hist['close']
+    hist.drop(['close'],axis=1,inplace=True)
+
+    hist[coin_choice2] = hist2[['close']]
+    hist[coin_choice3] = hist3[['close']]
 
     hist_year = hist[pd.DatetimeIndex(hist['date']).month*pd.DatetimeIndex(hist['date']).day==1]
     hist_year.drop(['date'],axis=1,inplace=True)
