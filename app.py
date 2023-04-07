@@ -20,7 +20,7 @@ if __name__=='__main__':
     # Get Data
 
     endpoint = 'https://min-api.cryptocompare.com/data/histoday'
-    res = requests.get(endpoint + '?fsym='+coin_choice+'&tsym=USD&limit=4000')
+    res = requests.get(endpoint + '?fsym='+coin_choice+'&tsym=USD&limit=3000')
     hist = pd.DataFrame(json.loads(res.content)['Data'])
 
     hist = hist.set_index('time')
@@ -30,7 +30,6 @@ if __name__=='__main__':
     hist.drop(["conversionType", "conversionSymbol"], axis = 'columns', inplace = True)
     
     hist_year = hist[pd.DatetimeIndex(hist['date']).month*pd.DatetimeIndex(hist['date']).day==1]
-    hist_year.drop(["date"])
     
     st.header(coin_choice +' daily activity')
     st.write(hist_year.sort_values(by=['time'], ascending=False))
