@@ -36,7 +36,7 @@ if __name__=='__main__':
     st.write(hist_year.sort_values(by=['time'], ascending=False))
     
     hist_month = hist[pd.DatetimeIndex(hist['date']).day==1]
-    hist_year.drop(['date'],axis=1)
+    hist_month.drop(['date'],axis=1)
 
     st.header(coin_choice +' monthly activity')
     st.write(hist_month.sort_values(by=['time'], ascending=False))
