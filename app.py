@@ -30,7 +30,14 @@ if __name__=='__main__':
     hist.drop(["conversionType", "conversionSymbol"], axis = 'columns', inplace = True)
     
     hist_year = hist[pd.DatetimeIndex(hist['date']).month*pd.DatetimeIndex(hist['date']).day==1]
+    hist_year.drop(['date'])
     
-    st.header(coin_choice +' daily activity')
+    st.header(coin_choice +' annual activity')
     st.write(hist_year.sort_values(by=['time'], ascending=False))
+    
+    hist_month = hist[pd.DatetimeIndex(hist['date']).day==1]
+    hist_year.drop(['date'])
+
+    st.header(coin_choice +' monthly activity')
+    st.write(hist_month.sort_values(by=['time'], ascending=False))
     
