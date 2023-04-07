@@ -25,7 +25,7 @@ if __name__=='__main__':
 
     hist = hist.set_index('time')
     hist.index = pd.to_datetime(hist.index, unit='s')
-    pd.DatetimeIndex(hist['date']).month==1
+    hist['date']=hist.index
 
     hist.drop(["conversionType", "conversionSymbol"], axis = 'columns', inplace = True)
     
