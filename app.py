@@ -30,7 +30,7 @@ if __name__=='__main__':
     hist3 = pd.DataFrame(json.loads(res.content)['Data'])
 
     hist1 = hist1.set_index('time')
-    hist1.index = pd.to_datetime(hist.index, unit='s')
+    hist1.index = pd.to_datetime(hist1.index, unit='s')
     hist1['date']=hist1.index
     hist2 = hist2.set_index('time')
     hist2.index = pd.to_datetime(hist2.index, unit='s')
