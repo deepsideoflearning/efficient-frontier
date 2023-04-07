@@ -5,6 +5,8 @@ import datetime
 import requests
 import json
 import pandas as pd
+import seaborn as sn
+import matplotlib.pyplot as plt
 
 
 if __name__=='__main__':
@@ -57,4 +59,7 @@ if __name__=='__main__':
     
     corr_matrix =hist_year.corr()
     st.write(corr_matrix)
-    
+
+    fig, ax = plt.subplots()
+    sn.heatmap(corr_matrix, annot=True)
+    st.write(fig)
