@@ -17,7 +17,7 @@ if __name__=='__main__':
     # Get Data
 
     endpoint = 'https://min-api.cryptocompare.com/data/histoday'
-    res = requests.get(endpoint + '?fsym='+coin_choice+'&tsym=USD&limit='+str(days))
+    res = requests.get(endpoint + '?fsym='+coin_choice+'&tsym=USD&limit=2000)
     hist = pd.DataFrame(json.loads(res.content)['Data'])
 
     hist = hist.set_index('time')
