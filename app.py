@@ -25,9 +25,17 @@ if __name__=='__main__':
     for i in range(7):
         coin_table.loc[i+3]=''
 
-    for i in range(10):
-        value =st.sidebar.text_input("Coin :", coin_table['coin'].at[i])
-        coin_table.loc[i]=value
+    coin_table.loc[0]=value =st.sidebar.text_input("Coin :", coin_table['coin'].at[0])
+    coin_table.loc[1]=value =st.sidebar.text_input("Coin :", coin_table['coin'].at[1])
+    coin_table.loc[2]=value =st.sidebar.text_input("Coin :", coin_table['coin'].at[2])
+    coin_table.loc[3]=value =st.sidebar.text_input("Coin :", coin_table['coin'].at[3])
+    coin_table.loc[4]=value =st.sidebar.text_input("Coin :", coin_table['coin'].at[4])
+    coin_table.loc[5]=value =st.sidebar.text_input("Coin :", coin_table['coin'].at[5])
+    coin_table.loc[6]=value =st.sidebar.text_input("Coin :", coin_table['coin'].at[6])
+    coin_table.loc[7]=value =st.sidebar.text_input("Coin :", coin_table['coin'].at[7])
+    coin_table.loc[8]=value =st.sidebar.text_input("Coin :", coin_table['coin'].at[8])
+    coin_table.loc[9]=value =st.sidebar.text_input("Coin :", coin_table['coin'].at[9])
+
 
     # Get Data
 
