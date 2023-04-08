@@ -43,7 +43,7 @@ if __name__=='__main__':
     hist_all=pd.DataFrame()
 
     for i, coin in coin_table.iterrows():
-        if coin['coin']<>'':
+        if coin['coin'] != '':
             print(coin['coin'])
             res = requests.get(endpoint + '?fsym='+coin['coin']+'&tsym=USD&limit=2000')
             hist = pd.DataFrame(json.loads(res.content)['Data'])
