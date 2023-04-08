@@ -25,7 +25,7 @@ if __name__=='__main__':
     for i in range(7):
         coin_table.loc[i+3]=''
 
-    value='BTC'
+    value=coin_table.loc[0].value
     value =st.sidebar.text_input("Coin :", value)
     coin_table.loc[0]=value
 #    coin_table.loc[1]=st.sidebar.text_input("Coin :", coin_table.loc[1])
