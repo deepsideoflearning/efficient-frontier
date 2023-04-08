@@ -57,13 +57,13 @@ if __name__=='__main__':
     hist_year.drop(['date'],axis=1,inplace=True)
     
     st.header('Annual activity')
-    st.write(hist_year.sort_values(by=['time'], ascending=False))
+    st.write(hist_year.sort_values(by=['time'], ascending=True))
     
     hist_month = hist_all[pd.DatetimeIndex(hist_all['date']).day==1]
     hist_month.drop(['date'],axis=1,inplace=True)
 
     st.header('monthly activity')
-    st.write(hist_month.sort_values(by=['time'], ascending=False))
+    st.write(hist_month.sort_values(by=['time'], ascending=True))
     
     corr_matrix =hist_year.corr()
     st.write(corr_matrix)
