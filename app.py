@@ -18,10 +18,13 @@ if __name__=='__main__':
     st.sidebar.write("Current time:", ct)
 
     coin_table=pd.DataFrame(columns=['coin'])
+
     coin_table.loc[0]='BTC'
     coin_table.loc[1]='ETH'
     coin_table.loc[2]='BNB'
-
+    for i in range(7):
+        coin_table.loc[i+3]=''
+        
     for i in range(10):
         coin_table.loc[i]=st.sidebar.text_input("Coin "+str(i)+":", coin_table.loc[i])
 
