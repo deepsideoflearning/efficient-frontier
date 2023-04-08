@@ -43,12 +43,13 @@ if __name__=='__main__':
     hist_all=pd.DataFrame()
 
     for i, coin in coin_table.iterrows():
-        print(coin['coin'])
-        res = requests.get(endpoint + '?fsym='+coin['coin']+'&tsym=USD&limit=2000')
-        hist = pd.DataFrame(json.loads(res.content)['Data'])
-        hist = hist.set_index('time')
-        hist.index = pd.to_datetime(hist.index, unit='s')
-        hist_all[coin['coin']] = hist[['close']]
+        if coin['coin']<>'':
+            print(coin['coin'])
+            res = requests.get(endpoint + '?fsym='+coin['coin']+'&tsym=USD&limit=2000')
+            hist = pd.DataFrame(json.loads(res.content)['Data'])
+            hist = hist.set_index('time')
+            hist.index = pd.to_datetime(hist.index, unit='s')
+            hist_all[coin['coin']] = hist[['close']]
    
     hist_all['date']=hist.index
 
