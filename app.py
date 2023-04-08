@@ -22,14 +22,15 @@ if __name__=='__main__':
     coin_table.loc[0]='BTC'
     coin_table.loc[1]='ETH'
     coin_table.loc[2]='BNB'
-    for i in range(7):
-        coin_table.loc[i+3]=''
+#    for i in range(7):
+#        coin_table.loc[i+3]=''
 
-    value=coin_table['coin'].at[0]
-    value =st.sidebar.text_input("Coin :", value)
+    value =st.sidebar.text_input("Coin :", coin_table['coin'].at[0])
     coin_table.loc[0]=value
-#    coin_table.loc[1]=st.sidebar.text_input("Coin :", coin_table.loc[1])
-#    coin_table.loc[2]=st.sidebar.text_input("Coin :", coin_table.loc[2])
+    value =st.sidebar.text_input("Coin :", coin_table['coin'].at[1])
+    coin_table.loc[1]=value
+    value =st.sidebar.text_input("Coin :", coin_table['coin'].at[2])
+    coin_table.loc[2]=value
 
     # Get Data
 
